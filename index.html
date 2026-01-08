@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shraddha Garud Portfolio</title>
+
+<!-- Embedded CSS -->
+<style>
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f9fafb; /* light background */
+    color: #111827;      /* dark text */
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Header & Navigation */
+header {
+    background: #1e3a8a;  /* deep blue */
+    color: #fff;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem;
+    transition: transform 0.3s;
+}
+
+header h1 a:hover {
+    transform: scale(1.1);
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+}
+
+header ul li a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #fbbf24; /* warm yellow underline */
+    transition: width 0.3s;
+    margin-top: 3px;
+}
+
+header ul li a:hover::after,
+header ul li a.active::after {
+    width: 100%;
+}
+
+header ul li a.active {
+    color: #fbbf24;
+}
+
+main {
+    padding: 50px 30px;
+}
+
+/* Sections */
+section {
+    margin-bottom: 80px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Home Section */
+#home h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #1e3a8a;
+}
+
+#home p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#home a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fbbf24;
+    color: #111827;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+#home a:hover {
+    background: #fcd34d;
+    transform: translateY(-3px);
+}
+
+/* Skills Section */
+#skills ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+#skills li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Projects Section */
+#project article {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#project article:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+#project a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#project a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Section */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 15px;
+}
+
+input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #d1d5db;
+    transition: border 0.3s;
+}
+
+input[type="email"]:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    background: #1e3a8a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+    background: #3749b0;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111827;
+    color: #fff;
+}
+
+/* Typing Animation */
+#typed-text {
+    border-right: 2px solid #1e3a8a;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 2.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1><a href="#home">Shraddha Garud</a></h1>
+    <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#project">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</header>
+
+<main>
+    <section id="home">
+        <h2 id="typed-text"></h2>
+        <p>I am currently aspiring to become a Java Full Stack Developer.</p>
+        <a href="#project">View my latest learning projects</a>
+    </section>
+
+    <section id="skills">
+        <h2>My Active Skills and Learning Focus</h2>
+        <p>I am actively building a foundational knowledge in the following technologies:</p>
+        <ul>
+            <li><strong>Core Languages:</strong> Java (OOP), HTML5, CSS3, Basic Javascript.</li>
+            <li><strong>Backend Focus:</strong> Spring Framework (Spring Boot, MVC), Basic SQL.</li>
+            <li><strong>Tools & Version Controls:</strong> Git, Github, IDE Familiarity (IntelliJ / Eclipse).</li>
+        </ul>
+    </section>
+
+    <section id="about"> 
+        <h2>About Me</h2>
+        <p>I am a highly motivated student aspiring to be a Java Full Stack Developer. I focus on mastering core concepts and building clean, functional projects. I am currently seeking an entry-level position or internship where I can apply my growing technical skills and gain professional experience.</p>
+    </section>
+
+    <section id="project">
+        <h2>My Projects</h2>
+        <article>
+            <h3>My First Project: Student Information Portal</h3>
+            <p>This project was built to practice foundational concepts in front-end development using only HTML and CSS.</p>
+            <h4>Key Focus Areas:</h4>
+            <ul>
+                <li><strong>HTML5:</strong> Mastering semantic structure and organization.</li>
+                <li><strong>CSS3:</strong> Implementing custom layouts, basic responsiveness, and styling.</li>
+                <li>Design: Applying visual hierarchy and clean aesthetics.</li>
+            </ul>
+            <a href="https://shraddhagarud920.github.io/student-information-portal/">Live Demo</a> | 
+            <a href="https://github.com/shraddhagarud920/student-information-portal">View Code</a>
+        </article>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>I am eager for feedback and networking!</p>
+        <form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+            <button type="submit">Send</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Shraddha Garud. All Rights Reserved.</p>
+</footer>
+
+<!-- Embedded JavaScript -->
+<script>
+// Typing animation for Home section
+const text = "Hello, I'm Shraddha Garud.";
+const typedText = document.getElementById("typed-text");
+let index = 0;
+function type() {
+    if(index < text.length) {
+        typedText.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(type, 100);
+    }
+}
+window.addEventListener("load", type);
+
+// Scroll reveal sections
+const sections = document.querySelectorAll("section");
+function checkVisibility() {
+    const triggerBottom = window.innerHeight * 0.85;
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if(sectionTop < triggerBottom) section.classList.add("visible");
+    });
+}
+window.addEventListener("scroll", checkVisibility);
+window.addEventListener("load", checkVisibility);
+
+// Smooth scrolling for nav links
+const navLinks = document.querySelectorAll("header nav ul li a");
+navLinks.forEach(link => {
+    link.addEventListener("click", function(e){
+        e.preventDefault();
+        const targetId = link.getAttribute("href").substring(1);
+        document.getElementById(targetId).scrollIntoView({behavior: "smooth"});
+    });
+});
+
+// Highlight current section in nav
+window.addEventListener("scroll", () => {
+    let scrollPos = window.scrollY + 200;
+    sections.forEach(section => {
+        if(scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+            navLinks.forEach(link => link.classList.remove("active"));
+            document.querySelector(`header nav ul li a[href="#${section.id}"]`).classList.add("active");
+        }
+    });
+});
+
+// Contact form validation
+const form = document.querySelector("form");
+form.addEventListener("submit", e => {
+    e.preventDefault();
+    const email = form.email.value;
+    if(email) {
+        alert(`Thank you! Your message has been sent: ${email}`);
+        form.reset();
+    } else {
+        alert("Please enter a valid email!");
+    }
+});
+</script>
+
+</body>
+</html>
